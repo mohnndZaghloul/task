@@ -22,17 +22,16 @@ function Item({id, order, index, items, setItems}) {
         });
         setItems(newItems);
     };
-
+    
     return (
         <div
-            className="border-2 border-red-600 rounded-full p-2 my-2 font-mono"
-            key={id}
+            className="border-[1px] border-red-600 bg-white p-2 my-2 mx-8 font-mono cursor-move hover:bg-red-500 transition"
             draggable
             onDragStart={(e) => handleDragStart(e, index)}
             onDragOver={handleDragOver}
             onDrop={(e) => handleDrop(e, index)}
             >
-            {`{ ID ${id} - Order ${order} }`}
+            <p>{`{ ID ${id} - Order ${order} }`}</p>
         </div>
     )
 }
